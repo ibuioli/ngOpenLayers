@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ng-openlayers": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-openlayers"
+    }
+  },
+  "defaultProject": "ng-openlayers",
+  "cli": {
+    "analytics": "b2de6b4f-967e-4a36-a781-8dc3222c95ef"
+  }
 }
