@@ -1,10 +1,24 @@
 <h2 style="text-align:center;">NG OpenLayers Component</h2>
+<h3 style="text-align:center;">Simple Map Viewer</h3>
 
-<div style="margin:0 auto; width:800px;">
+<div style="margin:20px auto; width:800px;">
   <ol-map
   [lat]="-34.603490361131385"
   [lon]="-58.382037891217465"
   [zoom]="16"
+  width="100%"
+  height="500px"
+  >
+  </ol-map>
+</div>
+
+<h2 style="text-align:center;">Simple marker</h2>
+
+<div style="margin:20px auto; width:800px;">
+  <ol-map
+  [lat]="-34.603490361131385"
+  [lon]="-58.382037891217465"
+  [zoom]="10"
   width="100%"
   height="500px"
   >
@@ -13,5 +27,79 @@
       [lon]="-58.382037891217465"
     >
     </ol-map-marker>
+  </ol-map>
+</div>
+
+<h2 style="text-align:center;">Multi-marker</h2>
+
+<div style="margin:20px auto; width:800px;">
+  <ol-map
+  [lat]="-34.603490361131385"
+  [lon]="-58.382037891217465"
+  [zoom]="3"
+  width="100%"
+  height="500px"
+  >
+    <ol-map-marker
+      [lat]="-34.603490361131385"
+      [lon]="-58.382037891217465"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="-54.818409519904115"
+      [lon]="-68.32457302173027"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="-34.11419322074028"
+      [lon]="-56.08144279509298"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="-20.978665559226457"
+      [lon]="-42.01486764112511"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="-21.6581298186248"
+      [lon]="-65.02500601028179"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="1.0427034600154457"
+      [lon]="-72.40561643057993"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="-31.4152767257574"
+      [lon]="-64.18438352450316"
+    >
+    </ol-map-marker>
+  </ol-map>
+</div>
+
+<h2 style="text-align:center;">Mini Maps</h2>
+
+<div style="margin:20px auto; width:800px;height:500px">
+  <ol-map
+  [lat]="-34.603490361131385"
+  [lon]="-58.382037891217465"
+  [zoom]="4"
+  width="380px"
+  height="380px"
+
+  style="float:left;margin-right:40px;"
+  >
+  </ol-map>
+
+  <ol-map
+  [lat]="40.41635739219987"
+  [lon]="-3.6902486755062682"
+  [zoom]="5"
+  width="380px"
+  height="380px"
+
+  style="float:left;"
+  >
   </ol-map>
 </div>

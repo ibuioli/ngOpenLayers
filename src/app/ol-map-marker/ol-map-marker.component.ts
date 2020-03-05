@@ -31,7 +31,7 @@ export class OlMapMarkerComponent implements OnInit, OnDestroy {
 
     const icon = new Style({
       image: new Icon({
-        anchor: [0.5, 0.5],
+        anchor: [0.5, 1],
         src: this.icon
       })
     });
@@ -45,7 +45,14 @@ export class OlMapMarkerComponent implements OnInit, OnDestroy {
     const vectorLayer = new VectorLayer({
         source: vectorSource
     });
-    this.olMap.setMarker(vectorLayer);
+
+    if (this.olMap.map) {
+      this.olMap.setMarker(vectorLayer);
+    } else {
+      setTimeout(() => {
+        this.ngOnInit();
+      }, 10);
+    }
   }
 
   ngOnDestroy() {}

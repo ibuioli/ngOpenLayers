@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ElementRef } from '@angular/core';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -18,24 +18,29 @@ export const DEFAULT_LON = -58.382037891217465;
   templateUrl: './ol-map.component.html',
   styleUrls: ['./ol-map.component.css']
 })
-export class OlMapComponent implements OnInit {
+export class OlMapComponent implements OnInit, AfterViewInit {
   @Input() lat: number = DEFAULT_LAT;
   @Input() lon: number = DEFAULT_LON;
   @Input() zoom: number;
   @Input() width: string | number = DEFAULT_WIDTH;
   @Input() height: string | number = DEFAULT_HEIGHT;
+
+  target: string = 'map-' + Math.random().toString(36).substring(2);
+
   map: Map;
 
   private mapEl: HTMLElement;
 
   constructor(private elementRef: ElementRef) { }
 
-  ngOnInit(): void {
-    this.mapEl = this.elementRef.nativeElement.querySelector('#map');
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    this.mapEl = this.elementRef.nativeElement.querySelector('#' + this.target);
     this.setSize();
 
     this.map = new Map({
-      target: 'map',
+      target: this.target,
       layers: [
         new TileLayer({
           source: new XYZ({
