@@ -9,14 +9,17 @@ import { defaults as defaultControls } from 'ol/control';
 export const DEFAULT_HEIGHT = '500px';
 export const DEFAULT_WIDTH = '500px';
 
+export const DEFAULT_LAT = -34.603490361131385;
+export const DEFAULT_LON = -58.382037891217465;
+
 @Component({
   selector: 'ol-map',
   templateUrl: './ol-map.component.html',
   styleUrls: ['./ol-map.component.css']
 })
 export class OlMapComponent implements OnInit, AfterViewInit {
-  @Input() lat: number;
-  @Input() lon: number;
+  @Input() lat: number = DEFAULT_LAT;
+  @Input() lon: number = DEFAULT_LON;
   @Input() zoom: number;
   @Input() width: string | number = DEFAULT_WIDTH;
   @Input() height: string | number = DEFAULT_HEIGHT;
