@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { OlMapComponent } from './ol-map/ol-map.component';
+import { OlMapMarkerComponent } from './ol-map-marker/ol-map-marker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OlMapComponent
+    OlMapComponent,
+    OlMapMarkerComponent
   ],
   imports: [
     BrowserModule
