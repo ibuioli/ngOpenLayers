@@ -32,7 +32,6 @@ export class OlMapComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.width, this.height);
     this.map = new Map({
       target: 'map',
       layers: [
