@@ -2,6 +2,22 @@
 
 Simple component for integrate OpenLayers to Angular project
 
+## How use it?
+
+Move ol-maps folder to app folder in your Angular project. Import OL Module in modules when need the OL Maps:
+
+```typescript
+import { OlMapsModule } from './ol-maps/ol-maps.module';
+```
+
+Then set it:
+
+```typescript
+imports: [
+    OlMapsModule
+]
+```
+
 ## Component OlMapComponent Inputs
 
 * lat: number (Latitude value of center)
