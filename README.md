@@ -37,6 +37,7 @@ Finally, on index.html import OL css:
 * lat: number (Latitude value of marker)
 * lon: number (Longitude value of marker)
 * icon: string (Path to image for marker)
+* anchor number[] (Number array of icon anchor)
 
 ---
 Contact: ibuioli@gmail.com
