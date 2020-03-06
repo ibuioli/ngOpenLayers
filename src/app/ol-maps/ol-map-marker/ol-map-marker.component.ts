@@ -22,7 +22,7 @@ export class OlMapMarkerComponent implements OnInit, OnDestroy {
   @Input() lat: number = DEFAULT_LAT;
   @Input() lon: number = DEFAULT_LON;
   @Input() icon: string = DEFAULT_ICON;
-  @Input() anchor: any[] = DEFAULT_ANCHOR;
+  @Input() anchor: number[] = DEFAULT_ANCHOR;
 
   constructor(private olMap: OlMapComponent) { }
 
