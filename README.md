@@ -18,6 +18,12 @@ imports: [
 ]
 ```
 
+Finally, on index.html import OL css:
+
+```html
+<link rel="stylesheet" href="https://openlayers.org/en/v6.1.1/css/ol.css" type="text/css">
+```
+
 ## Component OlMapComponent Inputs
 
 * lat: number (Latitude value of center)
