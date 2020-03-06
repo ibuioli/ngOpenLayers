@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { OlMapsModule } from './ol-maps/ol-maps.module';
 
 import { AppComponent } from './app.component';
-import { OlMapComponent } from './ol-map/ol-map.component';
-import { OlMapMarkerComponent } from './ol-map-marker/ol-map-marker.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OlMapComponent,
-    OlMapMarkerComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    OlMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
