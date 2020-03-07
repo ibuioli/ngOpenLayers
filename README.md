@@ -1,6 +1,6 @@
 # NgOpenLayers
 
-Simple component for integrate OpenLayers to Angular project
+Module for integrate OpenLayers to Angular project with Components
 
 ## How use it?
 
@@ -23,8 +23,8 @@ Finally, on index.html import OL css:
 ```html
 <link rel="stylesheet" href="https://openlayers.org/en/v6.1.1/css/ol.css" type="text/css">
 ```
-
-## Component OlMapComponent Inputs
+## Components
+### Component OlMapComponent Inputs
 
 * lat: number (Latitude value of center)
 * lon: number (Longitude value of center)
@@ -32,14 +32,14 @@ Finally, on index.html import OL css:
 * width: string (CSS data for width)
 * height: string (CSS data for height)
 
-## Component OlMapMarkerComponent Inputs
+### Component OlMapMarkerComponent Inputs
 
 * lat: number (Latitude value of marker)
 * lon: number (Longitude value of marker)
 * icon: string (Path to image for marker)
 * anchor number[] (Number array of icon anchor)
 
-## Component OlControlComponent Inputs
+### Component OlControlComponent Inputs
 
 * control: string (Control name. Can be FullScreen, MousePosition, OverviewMap, ScaleLine, ZoomSlider or ZoomToExtent)
 * options: object (Options for control)
