@@ -39,5 +39,10 @@ Finally, on index.html import OL css:
 * icon: string (Path to image for marker)
 * anchor number[] (Number array of icon anchor)
 
+## Component OlControlComponent Inputs
+
+* control: string (Control name. Can be FullScreen, MousePosition, OverviewMap, ScaleLine, ZoomSlider or ZoomToExtent)
+* options: object (Options for control)
+
 ---
 Contact: ibuioli@gmail.com
