@@ -8,12 +8,7 @@ import XYZ from 'ol/source/XYZ';
 import * as Proj from 'ol/proj';
 import {
   defaults as defaultControls,
-  FullScreen,
-  MousePosition,
-  OverviewMap,
-  ScaleLine,
-  ZoomSlider,
-  ZoomToExtent
+  Control
 } from 'ol/control';
 
 export const DEFAULT_HEIGHT = '500px';
@@ -33,42 +28,15 @@ export class OlMapComponent implements OnInit, AfterViewInit {
   @Input() zoom: number;
   @Input() width: string | number = DEFAULT_WIDTH;
   @Input() height: string | number = DEFAULT_HEIGHT;
-  @Input() isFullScreen: boolean;
-  @Input() isMousePosition: boolean;
-  @Input() isOverviewMap: boolean;
-  @Input() isScaleLine: boolean;
-  @Input() isZoomSlider: boolean;
-  @Input() isZoomToExtent: boolean;
 
   target: string = 'map-' + Math.random().toString(36).substring(2);
-
   map: Map;
-  controls: any = [];
 
   private mapEl: HTMLElement;
 
   constructor(private elementRef: ElementRef) { }
 
-  ngOnInit(): void {
-    if (this.isFullScreen) {
-      this.controls.push(new FullScreen());
-    }
-    if (this.isMousePosition) {
-      this.controls.push(new MousePosition());
-    }
-    if (this.isOverviewMap) {
-      this.controls.push(new OverviewMap());
-    }
-    if (this.isScaleLine) {
-      this.controls.push(new ScaleLine());
-    }
-    if (this.isZoomSlider) {
-      this.controls.push(new ZoomSlider());
-    }
-    if (this.isZoomToExtent) {
-      this.controls.push(new ZoomToExtent());
-    }
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.mapEl = this.elementRef.nativeElement.querySelector('#' + this.target);
@@ -87,7 +55,7 @@ export class OlMapComponent implements OnInit, AfterViewInit {
         center: Proj.fromLonLat([this.lon, this.lat]),
         zoom: this.zoom
       }),
-      controls: defaultControls().extend(this.controls),
+      controls: defaultControls().extend([]),
     });
   }
 
@@ -101,6 +69,10 @@ export class OlMapComponent implements OnInit, AfterViewInit {
 
   public setMarker(vector: VectorLayer) {
     this.map.addLayer(vector);
+  }
+
+  public setControl(control: Control) {
+    this.map.addControl(control);
   }
 
 }
