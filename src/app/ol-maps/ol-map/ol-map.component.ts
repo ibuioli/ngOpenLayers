@@ -5,6 +5,7 @@ import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
 import XYZ from 'ol/source/XYZ';
+import { OSM } from 'ol/source';
 import * as Proj from 'ol/proj';
 import {
   defaults as defaultControls,
@@ -46,16 +47,14 @@ export class OlMapComponent implements OnInit, AfterViewInit {
       target: this.target,
       layers: [
         new TileLayer({
-          source: new XYZ({
-            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          })
+          source: new OSM()
         })
       ],
       view: new View({
         center: Proj.fromLonLat([this.lon, this.lat]),
         zoom: this.zoom
       }),
-      controls: defaultControls().extend([]),
+      controls: defaultControls({attribution: false}).extend([]),
     });
   }
 

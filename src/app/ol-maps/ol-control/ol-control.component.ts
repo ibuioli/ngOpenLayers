@@ -9,6 +9,7 @@ import {
   ZoomSlider,
   ZoomToExtent,
   Zoom,
+  Attribution,
   Control
 } from 'ol/control';
 
@@ -44,6 +45,9 @@ export class OlControlComponent implements OnInit, OnDestroy {
         break;
       case 'zoomtoextend':
         this.chooseControl = new ZoomToExtent(this.options);
+        break;
+      case 'attribution':
+        this.chooseControl = new Attribution(this.options);
         break;
       default:
         this.chooseControl = new Zoom(this.options);
