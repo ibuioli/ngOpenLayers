@@ -54,7 +54,7 @@ export class OlMapComponent implements OnInit, AfterViewInit {
         center: Proj.fromLonLat([this.lon, this.lat]),
         zoom: this.zoom
       }),
-      controls: defaultControls({attribution: false}).extend([]),
+      controls: defaultControls({attribution: false, zoom: false}).extend([])
     });
   }
 
