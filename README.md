@@ -2,7 +2,14 @@
 
 Module for integrate OpenLayers to Angular project with Components
 
-## How use it?
+## How use it like Module in a Project?
+
+Install dependencies:
+
+```
+npm i ol
+npm i --save-dev @types/ol
+```
 
 Move ol-maps folder to app folder in your Angular project. Import OL Module in modules when need the OL Maps:
 
