@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OlMapMarkerComponent } from './ol-map-marker.component';
 
@@ -6,7 +6,7 @@ describe('OlMapMarkerComponent', () => {
   let component: OlMapMarkerComponent;
   let fixture: ComponentFixture<OlMapMarkerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OlMapMarkerComponent ]
     })
