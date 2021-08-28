@@ -42,7 +42,7 @@ export class OlMapMarkerComponent implements OnInit, OnDestroy {
     const icon = new Style({
       image: new Icon({
         anchor: this.anchor,
-        src: this.icon
+        src: this.icon,
       })
     });
 
@@ -66,6 +66,8 @@ export class OlMapMarkerComponent implements OnInit, OnDestroy {
     const vectorLayer = new VectorLayer({
         source: vectorSource
     });
+
+    vectorLayer.setZIndex(10);
 
     if (this.olMap.map) {
       this.olMap.setMarker(vectorLayer);

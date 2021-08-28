@@ -81,7 +81,7 @@
 
 <h3 style="text-align:center;">Mini Maps with Controls</h3>
 
-<div style="margin:20px auto; width:800px;height:500px">
+<div style="margin:20px auto; width:800px;height:400px">
   <ol-map
   lat="-34.603490361131385"
   lon="-58.382037891217465"
@@ -115,5 +115,37 @@
     </ol-control>
     <ol-control control="Zoom">
     </ol-control>
+  </ol-map>
+</div>
+
+<h3 style="text-align:center;">Routes</h3>
+
+<div style="margin:20px auto; width:800px;">
+  <ol-map
+  lat="-34.599638"
+  lon="-58.392795"
+  zoom="13"
+  width="100%"
+  height="500px"
+  >
+    <ol-route
+      lat1="-34.613696"
+      lon1="-58.391421"
+      lat2="-34.587132"
+      lon2="-58.385151"
+      width="5"
+      [color]="[10, 0, 250, 0.6]"
+    >
+    </ol-route>
+    <ol-map-marker
+      lat="-34.613696"
+      lon="-58.391421"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      lat="-34.587132"
+      lon="-58.385151"
+    >
+    </ol-map-marker>
   </ol-map>
 </div>
