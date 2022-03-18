@@ -23,7 +23,7 @@ export const DEFAULT_LON = -58.382037891217465;
   templateUrl: './ol-map.component.html',
   styleUrls: ['./ol-map.component.css']
 })
-export class OlMapComponent implements OnInit, AfterViewInit {
+export class OlMapComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() lat: number = DEFAULT_LAT;
   @Input() lon: number = DEFAULT_LON;
   @Input() zoom: number;
