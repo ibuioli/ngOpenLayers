@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewInit, Input, ElementRef, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import 'ol/ol.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -29,6 +29,9 @@ export class OlMapComponent implements OnInit, AfterViewInit {
   @Input() zoom: number;
   @Input() width: string | number = DEFAULT_WIDTH;
   @Input() height: string | number = DEFAULT_HEIGHT;
+  
+  @Output() movestart = new EventEmitter<any>();
+  @Output() moveend = new EventEmitter<any>();
 
   target: string = 'map-' + Math.random().toString(36).substring(2);
   map: Map;
@@ -56,6 +59,22 @@ export class OlMapComponent implements OnInit, AfterViewInit {
       }),
       controls: defaultControls({attribution: false, zoom: false}).extend([])
     });
+    
+    this.map.on("moveend",(e) => {
+      this.moveend.emit(e);
+    });
+    this.map.on("movestart",(e) => {
+      this.movestart.emit(e);
+    });
+  }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.map) {
+      this.map.setView(new View({
+        center: Proj.fromLonLat([this.lon, this.lat]),
+        zoom: this.zoom
+      }));
+    }
   }
 
   private setSize() {
