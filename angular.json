@@ -125,7 +125,6 @@
       }
     }
   },
-  "defaultProject": "ng-openlayers",
   "cli": {
     "analytics": "b2de6b4f-967e-4a36-a781-8dc3222c95ef"
   }
